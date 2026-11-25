@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EVOLUTION, next level astrology: 6 Monate strukturierte Begleitung durch die fünf persönlichen Planeten. Start im Februar 2027.">
+<title>EVOLUTION · Next level astrology · Astro mit Herz</title>
+<style>
+@font-face{font-family:"Glacial Indifference";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/GlacialIndifference-Regular.woff) format("woff")}
+@font-face{font-family:"Glacial Indifference";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/GlacialIndifference-Bold.woff) format("woff")}
+@font-face{font-family:"Pinyon Script";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/PinyonScript-Regular.ttf) format("truetype")}
+  :root{
+    --navy:#0b134b;
+    --gold:#bc7404;
+    --gold-soft:#e0a83a;
+    --turq:#3a40a8;
+    --turq-bright:#4046b8;
+    --turq-light:#b4b8f2;
+    --turq-deep:#2a2f86;
+    --white:#fdfcf9;
+    --cream:#f5ecda;
+    --sand:#ece0c6;
+    --tint:#eceefa;
+    --ink:#1b2140;
+    --maxw:1100px;
+
+    --fs-tag:16px;
+    --fs-small:16px;
+    --fs-h3:26px;
+    --fs-lead:20px;
+    --fs-body:20px;
+    --fs-heading:clamp(1.9rem,4.2vw,2.8rem);
+    --fs-h1:clamp(2.2rem,5.6vw,3.8rem);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{font-family:"Glacial Indifference",-apple-system,Segoe UI,sans-serif;color:var(--navy);background:var(--white);font-size:20px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .narrow{max-width:720px}
+
+  h1,h2,h3{font-weight:700;line-height:1.12;letter-spacing:.01em;text-wrap:balance}
+  h1{font-size:var(--fs-h1)}
+  h2{font-size:var(--fs-heading)}
+  .eyebrow{font-size:var(--fs-small);letter-spacing:.28em;padding-left:.28em;text-transform:uppercase;color:var(--turq-deep);font-weight:700;margin-bottom:18px;max-width:none}
+  .bg-cosmic .eyebrow{color:var(--turq-light)}
+  .lead{font-size:var(--fs-lead)}
+  p{max-width:64ch;text-wrap:pretty}
+  li{text-wrap:pretty}
+  .mark{background:linear-gradient(transparent 56%, #a5c3f5 56%, #a5c3f5 94%, transparent 94%);padding:0 .12em}
+
+  section{padding:clamp(56px,8vw,96px) 0}
+  .bg-cream{background:var(--cream)}
+  .bg-sand{background:var(--sand)}
+  .bg-tint{background:var(--tint)}
+  .bg-cosmic{color:#fff;background:
+    radial-gradient(1.5px 1.5px at 12% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 28% 68%, #cfe8ff, transparent),
+    radial-gradient(1.5px 1.5px at 46% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 63% 74%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 79% 38%, #c9ccfa, transparent),
+    radial-gradient(1px 1px at 88% 64%, #fff, transparent),
+    radial-gradient(1px 1px at 35% 86%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 70% 14%, #fff, transparent),
+    linear-gradient(140deg,#0b134b 0%,#1c2470 42%,#2a2f86 100%)}
+  .bg-cosmic p{color:rgba(255,255,255,.88)}
+
+  .btn{display:inline-block;background:var(--turq-bright);color:#fff;font-weight:700;letter-spacing:.04em;text-decoration:none;padding:16px 36px;border-radius:40px;font-size:1rem;box-shadow:0 8px 26px rgba(58,64,168,.4);transition:transform .15s ease, box-shadow .2s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(58,64,168,.55)}
+  .btn-note{display:block;margin-top:12px;font-size:var(--fs-small);opacity:.72}
+
+
+  /* HEADER */
+  .site-header{position:sticky;top:0;z-index:60;background:rgba(253,252,249,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(11,19,75,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:116px}
+  .brand{display:flex;align-items:center;text-decoration:none;color:var(--navy)}
+  .brand-mark{height:88px;width:auto;display:block}
+  .nav-cta{padding:10px 22px;font-size:var(--fs-small)}
+
+  /* FAHRPLAN: Sternbild */
+  section[id]{scroll-margin-top:120px}
+  .route{padding:clamp(28px,4vw,44px) 0 clamp(20px,3vw,32px);color:#fff;background:linear-gradient(rgba(7,12,51,.28),rgba(7,12,51,.28)),url('images/sternenhimmel.jpg') center/cover no-repeat,#070c33}
+  .route-eyebrow{text-align:center;margin-bottom:6px;color:var(--turq-light)}
+  .constellation{position:relative;max-width:1100px;margin:0 auto;height:300px}
+  .c-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .c-lines.mob{display:none}
+  .c-lines polyline{fill:none;stroke:#fff6de;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;opacity:.5;vector-effect:non-scaling-stroke}
+  .c-dot{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.6}
+  .star{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);display:block;width:52px;height:52px;color:#fff;text-decoration:none}
+  .star svg{display:block;width:100%;height:100%;transition:transform .2s ease}
+  .star:hover svg,.star:focus-visible svg{transform:scale(1.3)}
+  .star:focus-visible{outline:2px solid #fff;outline-offset:6px;border-radius:8px}
+  .star.l .lab{left:auto;right:calc(100% + 8px);top:50%;transform:translateY(-50%)}
+  .star .lab{position:absolute;left:50%;top:calc(100% - 6px);transform:translateX(-50%);white-space:nowrap;font-size:var(--fs-small);font-weight:700;letter-spacing:.04em;text-shadow:0 1px 8px rgba(7,12,51,.8)}
+  @media(max-width:760px){
+    .constellation{height:640px;max-width:420px}
+    .c-lines.desk{display:none}
+    .c-lines.mob{display:block}
+    .star{left:var(--mx);top:var(--my)}
+    .star .lab,.star.l .lab{left:calc(100% + 10px);right:auto;top:50%;transform:translateY(-50%)}
+  }
+
+  /* HERO */
+  .hero{text-align:center;position:relative;overflow:hidden}
+  /* TITELBILD */
+  .titelbild{width:100%;overflow:hidden;line-height:0}
+  .titelbild img{width:100%;height:auto;display:block}
+  .wordmark-sub{letter-spacing:.14em;font-size:var(--fs-h3);font-weight:700;color:var(--turq-deep);margin:0 auto 18px;max-width:none}
+  .slogan-script{font-family:"Pinyon Script",cursive;font-size:var(--fs-heading);color:var(--turq-deep);line-height:1.05;margin-bottom:22px}
+  .hero h1{max-width:20ch;margin:0 auto 22px}
+  .hero .lead{max-width:52ch;margin:0 auto 30px}
+
+  .accent-bg{position:relative;overflow:hidden}
+  .accent-bg::before{content:"";position:absolute;inset:0;background-image:var(--accent-img);background-size:cover;background-position:center;opacity:var(--accent-op,.14);mix-blend-mode:var(--accent-blend,normal);pointer-events:none}
+  .accent-bg>.wrap{position:relative;z-index:1}
+
+  /* Listen aus dem Original */
+  .sys-list{list-style:none;margin:18px 0 26px}
+  .sys-list li{padding:8px 0 8px 32px;position:relative;font-size:var(--fs-body)}
+  .two-col .lead{font-size:var(--fs-body)}
+  .sys-list li::before{content:"✦";position:absolute;left:0;color:var(--turq-deep);top:9px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);margin-top:26px}
+  .two-col h3{font-size:var(--fs-lead);margin-bottom:6px}
+  @media(max-width:760px){.two-col{grid-template-columns:1fr}}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .chips span{background:#fff;border-radius:22px;padding:7px 16px;font-size:var(--fs-small);box-shadow:0 4px 12px rgba(11,19,75,.07)}
+  .persp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);margin-top:56px}
+  .persp h3{font-size:var(--fs-lead)}
+  @media(max-width:760px){.persp{grid-template-columns:1fr}}
+
+  /* Planeten-Karten */
+  .planets{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);margin-top:36px}
+  .pcard{background:#fff;border-radius:20px;padding:26px 24px 22px;box-shadow:0 12px 30px rgba(11,19,75,.08);border-top:4px solid var(--turq);display:flex;flex-direction:column}
+  .pcard.integ{border-top-color:var(--gold-soft)}
+  .pmonth{font-size:var(--fs-tag);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .pdates{font-size:var(--fs-small);font-weight:700;color:var(--turq-deep);margin:-8px 0 12px}
+  .pname{font-size:var(--fs-h3);font-weight:700;line-height:1.2;margin:4px 0 14px;overflow-wrap:anywhere}
+  .pcard ul{list-style:none;flex:1}
+  .pcard li{padding:5px 0 5px 22px;position:relative;font-size:var(--fs-body);line-height:1.4}
+  .pcard li::before{content:"✦";position:absolute;left:0;color:var(--turq-deep);font-size:.8em;top:9px}
+  .pcacao{display:inline-block;margin-top:10px;background:var(--tint);color:var(--turq-deep);font-weight:700;font-size:var(--fs-tag);padding:4px 12px;border-radius:20px;align-self:flex-start}
+  @media(max-width:900px){.planets{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.planets{grid-template-columns:1fr}}
+
+  /* Für wen */
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,40px);margin-top:20px}
+  .fit-card{background:#fff;border-radius:20px;padding:clamp(26px,4vw,36px);box-shadow:0 12px 30px rgba(11,19,75,.08)}
+  .fit-card h3{font-size:var(--fs-lead);margin-bottom:14px;line-height:1.3}
+  .fit-card ul{list-style:none}
+  .fit-card li{padding:8px 0 8px 30px;position:relative}
+  .fit-yes li::before{content:"✓";position:absolute;left:0;color:var(--turq-deep);font-weight:700}
+  .fit-no li::before{content:"×";position:absolute;left:0;color:rgba(11,19,75,.5);font-weight:700}
+  @media(max-width:760px){.fit-grid{grid-template-columns:1fr}}
+
+  /* Preis */
+  .price-card{position:relative;background:#fff;border-radius:24px;padding:clamp(30px,5vw,52px);max-width:640px;margin:0 auto;box-shadow:0 26px 64px rgba(11,19,75,.18);text-align:center}
+  .price-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;border-radius:24px 24px 0 0;background:linear-gradient(90deg,var(--turq-bright),var(--gold-soft))}
+  .pill{display:inline-block;background:var(--tint);color:var(--turq-deep);font-weight:700;font-size:var(--fs-tag);letter-spacing:.1em;text-transform:uppercase;padding:7px 18px;border-radius:20px;margin-bottom:16px}
+  .price-tag{font-size:var(--fs-heading);font-weight:700;margin:6px 0 2px}
+  .price-rates{opacity:.75}
+  .early{margin:22px auto 0;padding:14px 18px;background:var(--tint);border-radius:12px;font-size:var(--fs-small);max-width:440px}
+  .price-card ul{list-style:none;text-align:left;max-width:440px;margin:22px auto 0}
+  .price-card li{padding:10px 0 10px 34px;position:relative;border-bottom:1px solid rgba(11,19,75,.1)}
+  .price-card li::before{content:"✦";position:absolute;left:0;color:var(--turq-deep);top:10px}
+
+  /* Über mich */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,64px);align-items:center}
+  .portrait{aspect-ratio:4/5;border-radius:20px;box-shadow:0 20px 50px rgba(11,19,75,.18);background-image:linear-gradient(140deg,rgba(224,168,58,.14),rgba(188,116,4,.07)),url('images/portrait.jpg'),linear-gradient(140deg,#12204f,#2a2f86);background-size:cover,150% auto,cover;background-position:center,center 8%,center}
+  .about h2{margin-bottom:18px}
+  .about p{margin-bottom:16px}
+
+  .band{background:linear-gradient(100deg,var(--turq-deep),var(--turq-bright));color:#fff;text-align:center;padding:clamp(36px,5vw,56px) 0}
+  .band h2{max-width:none}
+  .band p{color:#fff;margin:12px auto 0}
+
+  /* Melli: Nervensystem-Sessions */
+  .melli{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:clamp(26px,5vw,56px);align-items:center;background:#fff;border-radius:24px;padding:clamp(24px,4vw,44px);box-shadow:0 18px 50px rgba(11,19,75,.12)}
+  .melli-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:18px}
+  .melli-who{margin-top:14px;text-align:center}
+  .melli-who strong{display:block;font-size:var(--fs-lead)}
+  .melli-role{display:block;font-style:normal;font-size:var(--fs-small);margin:2px 0 4px;opacity:.8}
+  .melli-who span{font-family:"Pinyon Script",cursive;font-size:var(--fs-h3);color:var(--turq-deep);line-height:1.2}
+  .melli-copy h2{margin-bottom:16px}
+  .melli-copy p{margin-bottom:16px}
+  @media(max-width:760px){.melli{grid-template-columns:1fr}.melli-photo{max-width:320px;margin:0 auto}}
+
+  .melli-fig{position:relative;padding-top:54px}
+  .neu{position:absolute;top:0;left:0;background:var(--turq-bright);color:#fff;font-weight:700;font-size:var(--fs-small);letter-spacing:.06em;padding:6px 16px;border-radius:20px;box-shadow:0 6px 18px rgba(58,64,168,.45)}
+  .body-map{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(26px,5vw,56px);align-items:center;background:#fff;border-radius:24px;padding:clamp(24px,4vw,44px);box-shadow:0 18px 50px rgba(11,19,75,.12);margin-top:clamp(24px,4vw,40px)}
+  .body-img{display:block;width:100%;max-width:440px;height:auto;margin:0 auto}
+  .body-map h2{margin-bottom:12px}
+  .body-map p{margin-bottom:20px}
+  .legend{list-style:none}
+  .legend li{display:flex;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid rgba(11,19,75,.1)}
+  .legend li:last-child{border-bottom:0}
+  .legend-ico{flex:0 0 auto;width:46px;height:46px}
+  .legend strong{font-size:var(--fs-small);margin-right:4px}
+  .legend .what{font-size:var(--fs-small);line-height:1.5;margin-top:2px}
+  @media(max-width:760px){.body-map{grid-template-columns:1fr}}
+
+  /* Stimmen: hochkant nebeneinander */
+  .quotes{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,22px);align-items:stretch}
+  .quote{background:#fff;border-radius:18px;padding:30px 24px;box-shadow:0 12px 30px rgba(11,19,75,.1);border-top:3px solid var(--turq);position:relative}
+  .rating{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .stars{color:var(--gold-soft);font-size:var(--fs-lead);letter-spacing:.12em;line-height:1}
+  .score{font-weight:700;font-size:var(--fs-small);color:var(--turq-deep)}
+  .quote p{font-style:italic;margin:16px 0 0;font-size:var(--fs-small);line-height:1.6}
+  .quote .who{margin-top:16px;font-size:var(--fs-tag);letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--turq-deep)}
+  @media(max-width:1000px){.quotes{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.quotes{grid-template-columns:1fr}}
+
+  /* FAQ */
+  .faq details{border-bottom:1px solid rgba(11,19,75,.18);padding:4px 0}
+  .faq summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;position:relative;font-size:var(--fs-lead);font-weight:700}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:14px;font-size:1.6rem;color:var(--turq-deep);transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{padding:0 0 20px;margin:0}
+
+  .final h2{max-width:22ch;margin:0 auto 28px}
+
+  footer{background:#c68b4e;color:var(--cream);text-align:center;padding:44px 24px}
+  footer .logo{font-weight:700;letter-spacing:.14em;font-size:var(--fs-lead);color:#fff}
+  footer small{display:block;margin-top:10px;opacity:.6;letter-spacing:.1em;font-size:var(--fs-small)}
+  .footer-legal{margin-top:20px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+  .footer-legal a{color:var(--cream);opacity:.55;text-decoration:none;font-size:var(--fs-tag);letter-spacing:.04em}
+  .footer-legal a:hover{opacity:.9}
+
+  @media(max-width:760px){
+    .about-grid{grid-template-columns:1fr;gap:28px}
+    .portrait{width:100%;max-width:340px;margin:0 auto}
+    .nav{height:auto;padding:12px 24px;gap:12px}
+    .brand-mark{height:48px}
+    .nav-cta{padding:8px 14px;font-size:var(--fs-small);white-space:nowrap}
+  }
+</style>
+</head>
+<body>
+
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img class="brand-mark" src="images/logo-transparent.png" alt="Astro mit Herz, by Pia Tietz">
+    </a>
+    <a href="#preis" class="btn nav-cta">Zur Buchung</a>
+  </div>
+</header>
+
+<!-- ===== TITELBILD ===== -->
+<div class="titelbild" id="top">
+  <img src="images/titelbild-evo1.jpg" alt="EVOLUTION of the planets">
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero bg-cream">
+  <div class="wrap">
+    <p class="wordmark-sub">Next level&nbsp;astrology.</p>
+    <h1>Du kennst dein Horoskop.<br><span class="mark">Aber spürst du es&nbsp;auch?</span></h1>
+    <p class="lead">Viele verstehen ihre Astrologie, aber können sie nicht greifen. Was&nbsp;fehlt, ist kein weiteres Einzelwissen. Was&nbsp;fehlt, ist ein klares System, das alles&nbsp;verbindet.</p>
+    <a href="#preis" class="btn">EVOLUTION, ich bin dabei</a>
+    <span class="btn-note">Start im Februar 2027. Nur&nbsp;8 Plätze, für eine persönliche&nbsp;Atmosphäre.</span>
+  </div>
+</section>
+
+<!-- ===== FAHRPLAN ===== -->
+<section class="route" aria-label="Sternenkarte durch die Seite, angeordnet wie das Sternbild Großer Wagen">
+  <div class="wrap">
+    <p class="eyebrow route-eyebrow">Deine Sternenkarte</p>
+    <nav class="constellation">
+      <svg class="c-lines desk" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="8,74 19.6,49 35.1,44 54.7,39 65.3,54 91.9,42 90.9,18 54.7,39"/></svg>
+      <svg class="c-lines mob" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="14,5 30,17 36,31 40,48 22,62 36,90 62,76 40,48"/></svg>
+      
+      <a class="star" href="#system" style="--x:8%;--y:74%;--mx:14%;--my:5%"><svg viewBox="-24 -24 48 48" aria-hidden="true"><defs><radialGradient id="sg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffffff"/><stop offset=".12" stop-color="#fff3d1"/><stop offset=".35" stop-color="#f2c766" stop-opacity=".55"/><stop offset="1" stop-color="#e0a83a" stop-opacity="0"/></radialGradient></defs><circle r="22" fill="url(#sg)"/><circle r="3.4" fill="#fff"/><path d="M0 -17 V17 M-17 0 H17" stroke="#fff6de" stroke-width=".9" stroke-linecap="round" opacity=".75"/></svg><span class="lab">Das große Bild</span></a>
+      <a class="star" href="#planeten" style="--x:19.6%;--y:49%;--mx:30%;--my:17%"><svg viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="url(#sg)"/><circle r="3.4" fill="#fff"/><path d="M0 -17 V17 M-17 0 H17" stroke="#fff6de" stroke-width=".9" stroke-linecap="round" opacity=".75"/></svg><span class="lab">Inhalte</span></a>
+      <a class="star" href="#preis" style="--x:35.1%;--y:44%;--mx:36%;--my:31%"><svg viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="url(#sg)"/><circle r="3.4" fill="#fff"/><path d="M0 -17 V17 M-17 0 H17" stroke="#fff6de" stroke-width=".9" stroke-linecap="round" opacity=".75"/></svg><span class="lab">Dabei sein</span></a>
+      <a class="star" href="#ueber" style="--x:54.7%;--y:39%;--mx:40%;--my:48%"><svg viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="url(#sg)"/><circle r="3.4" fill="#fff"/><path d="M0 -17 V17 M-17 0 H17" stroke="#fff6de" stroke-width=".9" stroke-linecap="round" opacity=".75"/></svg><span class="lab">Über Pia</span></a>
+      <a class="star" href="#stimmen" style="--x:65.3%;--y:54%;--mx:22%;--my:62%"><svg viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="url(#sg)"/><circle r="3.4" fill="#fff"/><path d="M0 -17 V17 M-17 0 H17" stroke="#fff6de" stroke-width=".9" stroke-linecap="round" opacity=".75"/></svg><span class="lab">Erfahrungsberichte</span></a>
+      <a class="star" href="#melli" style="--x:91.9%;--y:42%;--mx:36%;--my:90%"><svg viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="url(#sg)"/><circle r="3.4" fill="#fff"/><path d="M0 -17 V17 M-17 0 H17" stroke="#fff6de" stroke-width=".9" stroke-linecap="round" opacity=".75"/></svg><span class="lab">Planeten im Körper</span></a>
+      <a class="star l" href="#faq" style="--x:90.9%;--y:18%;--mx:62%;--my:76%"><svg viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="url(#sg)"/><circle r="3.4" fill="#fff"/><path d="M0 -17 V17 M-17 0 H17" stroke="#fff6de" stroke-width=".9" stroke-linecap="round" opacity=".75"/></svg><span class="lab">Deine Fragen</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ===== BILDERREIHE ===== -->
+<section style="background:#fff;padding:clamp(24px,4vw,48px) 0 0;overflow:hidden">
+  <div style="max-width:1500px;margin:0 auto;overflow:hidden">
+    <img src="images/spiralen-strecke.jpg" alt="Spiralen in der Natur: Schnecke, Farn, Wolkenwirbel, Widderhorn, Auge, Fingerabdruck" style="display:block;width:132%;max-width:none;height:auto;margin-left:-16%">
+  </div>
+</section>
+
+<!-- ===== SYSTEM ===== -->
+<section class="bg-white" id="system">
+  <div class="wrap narrow">
+    <p class="lead" style="font-weight:700">Ein System,&nbsp;das:</p>
+    <ul class="sys-list">
+      <li>innere Muster sichtbar&nbsp;macht</li>
+      <li>Worte findet für&nbsp;Empfindungen</li>
+      <li>Ordnung ins eigene Innenleben&nbsp;bringt</li>
+      <li>dem, was schwer greifbar ist, klare Struktur&nbsp;gibt</li>
+    </ul>
+    <h2>Das ist&nbsp;EVOLUTION.</h2>
+  </div>
+</section>
+
+<!-- ===== KEIN KLASSISCHER KURS ===== -->
+<section class="bg-tint" id="idee">
+  <div class="wrap">
+    <div class="narrow" style="margin:0 auto;text-align:center">
+      <h2 style="margin-bottom:14px">EVOLUTION ist kein klassischer&nbsp;Astrologie-Kurs.</h2>
+      <p class="lead" style="margin:0 auto">Es ist ein strukturierter Prozess, der dir&nbsp;zeigt:</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <ul class="sys-list" style="margin-top:0">
+          <li>wie deine inneren Kräfte aufgebaut&nbsp;sind</li>
+          <li>wie sie sich&nbsp;ausdrücken</li>
+          <li>auf welcher Ebene du sie gerade&nbsp;lebst</li>
+        </ul>
+        <p class="lead">… und wie du den nächsten Schritt in deine Entfaltung&nbsp;gehst.</p>
+      </div>
+      <div>
+        <p class="lead" style="margin-bottom:6px">Ziel ist nicht, noch mehr zu wissen. Schöner&nbsp;Side-Effect&nbsp;;)</p>
+        <p class="lead" style="font-weight:700">Sondern:</p>
+        <ul class="sys-list" style="margin-top:8px">
+          <li>dich selbst klarer zu&nbsp;führen</li>
+          <li>dein schönstes, strahlendstes Ich zu&nbsp;leben</li>
+          <li>ein Gefühl für die Urkräfte des Kosmos zu&nbsp;bekommen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HERAKLIT ===== -->
+<section class="bg-cream" style="text-align:center">
+  <div class="wrap">
+    <p class="slogan-script">„Nichts ist, alles wird.“&nbsp;(Heraklit)</p>
+    <p class="lead" style="margin:0 auto 22px">Leben ist kein fester Zustand, sondern ein lebendiges Werden, eine fortwährende&nbsp;Entfaltung.</p>
+    <p class="lead" style="margin:0 auto 6px">Astrologie ist so viel mehr als die „fancy“ Sprache des&nbsp;Kosmos.</p>
+    <p class="lead" style="margin:0 auto 6px">Mehr als ein Konzept aus&nbsp;Himmelskörperbewegungen.</p>
+    <p class="lead" style="margin:0 auto">Mehr als 12 Schubladen mit nettem&nbsp;Etikett.</p>
+  </div>
+</section>
+
+<!-- ===== PLANETEN ===== -->
+<section class="bg-white" id="planeten">
+  <div class="wrap">
+    <div style="text-align:center;max-width:680px;margin:0 auto">
+      <p class="eyebrow">Februar bis Juli&nbsp;2027</p>
+      <h2>Jeder Monat widmet sich einer zentralen&nbsp;Kraft</h2>
+      <p class="lead" style="margin:16px auto 0">Die 5 persönlichen Planeten. Zwei&nbsp;Live-Calls pro Monat, jeweils mittwochs um 19&nbsp;Uhr.</p>
+    </div>
+
+    <div class="planets">
+      <div class="pcard">
+        <div class="pmonth">Februar</div><div class="pname">MARS</div><div class="pdates">3.2. &amp; 17.2.</div>
+        <ul><li>Handlung &amp;&nbsp;Richtung</li><li>Durchsetzung &amp;&nbsp;Kraftpotential</li><li>Entschlusskraft &amp;&nbsp;Energie</li></ul>
+      </div>
+      <div class="pcard">
+        <div class="pmonth">März</div><div class="pname">VENUS</div><div class="pdates">3.3. &amp; 17.3.</div>
+        <ul><li>Selbstwert</li><li>Liebe, Verbindung,&nbsp;Kontakt</li><li>Empfangen&nbsp;lernen</li></ul>
+        <span class="pcacao">Cacao-Zeremonie am&nbsp;17.3.</span>
+      </div>
+      <div class="pcard">
+        <div class="pmonth">April</div><div class="pname">MERKUR</div><div class="pdates">7.4. &amp; 21.4.</div>
+        <ul><li>Denken, Sprechen,&nbsp;Lernen</li><li>Kommunikation</li><li>Ausdruck</li></ul>
+      </div>
+      <div class="pcard">
+        <div class="pmonth">Mai</div><div class="pname">MOND</div><div class="pdates">5.5. &amp; 19.5.</div>
+        <ul><li>Innere&nbsp;Empfindungswelten</li><li>Bedürfnisse</li><li>Prägungen</li></ul>
+        <span class="pcacao">Cacao-Zeremonie am&nbsp;19.5.</span>
+      </div>
+      <div class="pcard">
+        <div class="pmonth">Juni</div><div class="pname">SONNE</div><div class="pdates">2.6. &amp; 16.6.</div>
+        <ul><li>Identität</li><li>Das eigene&nbsp;Strahlen</li><li>Kraft &amp;&nbsp;Mission</li></ul>
+      </div>
+      <div class="pcard integ">
+        <div class="pmonth">Juli</div><div class="pname">INTEGRATIONSZEIT</div><div class="pdates">keine Calls</div>
+        <ul><li>Die 5 persönlichen&nbsp;Planeten</li><li>Bestandsaufnahme &amp;&nbsp;Evolution</li><li>Impulse via&nbsp;Telegram</li></ul>
+      </div>
+    </div>
+    <p class="lead" style="text-align:center;margin:30px auto 0">Die Inhalte bauen aufeinander auf und werden Schritt für Schritt&nbsp;integriert.</p>
+
+    <div class="persp">
+      <div>
+        <h3>Jede dieser Kräfte betrachten wir aus mehreren&nbsp;Perspektiven:</h3>
+        <div class="chips"><span>Entwicklungsebenen</span><span>persönliche&nbsp;Ausprägung</span><span>typische Muster im&nbsp;Alltag</span><span>energetisches&nbsp;Spektrum</span><span>konkrete&nbsp;Anwendung</span><span>Signaturenlehre&nbsp;(Paracelsus)</span></div>
+      </div>
+      <div>
+        <h3>Abgerundet&nbsp;durch:</h3>
+        <div class="chips"><span>Fragebögen zur&nbsp;Selbstanalyse</span><span>die Entfaltungsspirale jeder&nbsp;Kraft</span><span>die Farbfächer der&nbsp;Tierkreiszeichen</span><span>konkrete Übungen zur&nbsp;Integration</span><span>Austausch &amp; Verbindung in der&nbsp;Gruppe</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FARBBALKEN ===== -->
+<section class="band">
+  <div class="wrap"><h2>Nicht nur verstehen, sondern&nbsp;erleben.</h2><p class="lead">Kosmische Weisheit in Form&nbsp;gegossen.</p></div>
+</section>
+
+<!-- ===== FÜR WEN ===== -->
+<section class="bg-cream" id="fuerwen">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:12px">
+      <p class="eyebrow">Für wen ist&nbsp;das?</p>
+      <h2>Passt EVOLUTION zu&nbsp;dir?</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <h3>EVOLUTION ist für dich, wenn&nbsp;…</h3>
+        <ul class="fit-yes">
+          <li>du dich schon mit dir selbst beschäftigt hast (und wahrscheinlich echt viel&nbsp;;))</li>
+          <li>du Astrologie&nbsp;kennst</li>
+          <li>du merkst, dass Verstehen allein nicht&nbsp;reicht</li>
+          <li>dir viele Konzepte zu abgehoben sind und du klare Erdung&nbsp;möchtest</li>
+          <li>du die bunten Einzelteile in ein direkt anwendbares großes Bild setzen&nbsp;willst</li>
+        </ul>
+      </div>
+      <div class="fit-card">
+        <h3>EVOLUTION ist nicht für dich, wenn&nbsp;…</h3>
+        <ul class="fit-no">
+          <li>du keine Verantwortung für dich übernehmen&nbsp;willst</li>
+          <li>du nur Wissen konsumieren&nbsp;willst</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PREIS ===== -->
+<section class="bg-white" id="preis">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Buchung</p>
+    <h2 style="margin-bottom:30px">Start im Februar&nbsp;2027</h2>
+    <div class="price-card">
+      <p class="pill">Nur 8&nbsp;Plätze</p>
+      <div class="price-tag">2.777&nbsp;€</div>
+      <p style="opacity:.75;margin:0 auto">einmalig</p>
+      <p class="price-rates">oder in Raten: 3 × 927 € · 6 × 467&nbsp;€</p>
+      <ul>
+        <li>Zeitraum: 6 Monate, Februar bis Juli&nbsp;2027</li>
+        <li>2 Live-Calls pro Monat via Zoom, jeweils mittwochs um 19&nbsp;Uhr (Input + Integration), insgesamt 10 Calls à 120&nbsp;Minuten</li>
+        <li>Inhalte pro Monat, passend zum Planeten&nbsp;freigeschaltet</li>
+        <li>Bonus: Astrologie x Nervensystem, 5&nbsp;Körpersessions mit&nbsp;Melli</li>
+        <li>Kleine Gruppe in persönlicher Atmosphäre &amp; begleitende&nbsp;Telegramgruppe</li>
+        <li>Übersichten (PDFs) und Audios&nbsp;inklusive</li>
+      </ul>
+      <p class="early">+ Bei Anmeldung bis 10.1. ist eine 1:1 Session (60&nbsp;Min.) mit mir&nbsp;inklusive.</p>
+      <div style="margin-top:30px"><a href="https://tfft.io/vfiYXjX" class="btn" target="_blank" rel="noopener">EVOLUTION, zur Buchung</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÜBER MICH ===== -->
+<section class="bg-white about" id="ueber" style="padding-top:0">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait"></div>
+      <div>
+        <p class="eyebrow">Über&nbsp;mich</p>
+        <h2>Hi, ich bin&nbsp;Pia.</h2>
+        <p>Astrologin, Beraterin und die Stimme hinter <em>Astro mit&nbsp;Herz</em>. Angefangen&nbsp;hat alles 2019 mit einer Session zu meinem eigenen Geburtshoroskop. Diese&nbsp;eine Deutung hat so viel in mir sortiert, dass ich seitdem nicht mehr mit der Astrologie aufhören konnte ;)</p>
+        <p>Hinter EVOLUTION steht fundiertes Wissen: ein Studium der Psychologischen Astrologie an der DAV-zertifizierten Astropraxis Hamburg, die Fachmitgliedschaft im Schweizer Astrologenbund, mehrere Fort- und Weiterbildungen, unter anderem bei Petra Dörfert und Lynn Bell, und die Schule des&nbsp;Lebens&nbsp;:)</p>
+        <p>Die Sprache des Kosmos wird zugänglich, tief und lebendig. Geerdete&nbsp;Klarheit mit&nbsp;Herzenswärme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STIMMEN ===== -->
+<section class="bg-cream" id="stimmen">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:30px">
+      <p class="eyebrow">EVOLUTION, was sich bewegt&nbsp;hat</p>
+      <h2>Teilnehmerstimmen der ersten&nbsp;Runde</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote"><div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span class="score">5 /&nbsp;5</span></div><p>„Ich spüre mehr, mein Körper ist für mich präsenter. Die&nbsp;Verbindung der Emotionen zum Körper, zur Handlung und zu Gedanken, hier bewusster gewisse Einflüsse zu erkennen und die mögliche Veränderung durch&nbsp;mich.“</p></div>
+      <div class="quote"><div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span class="score">5 /&nbsp;5</span></div><p>„Am meisten Freude haben mir die Übungen zu meiner Venus gemacht. Das&nbsp;Annehmen ist wunderschön. Ich&nbsp;habe schon zwei neue Dinge ausprobiert, ohne es zu&nbsp;zerdenken.“</p></div>
+      <div class="quote"><div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span class="score">5 /&nbsp;5</span></div><p>„Ich mag deine Art, Astrologie zu vermitteln, sehr. Fühlen&nbsp;und denken in Kombination. Auch&nbsp;lerne ich gut über deine&nbsp;Bildsprache.“</p></div>
+      <div class="quote"><div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span class="score">5 /&nbsp;5</span></div><p>„Die Rückverbindung zu sich selbst ist immer der Schlüssel zu mehr Freiheit und einem selbstbestimmten Leben. Total&nbsp;gut, vertiefend und auch für später immer wieder zum&nbsp;Stöbern.“</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NERVENSYSTEM-SESSIONS ===== -->
+<section class="bg-tint" id="melli">
+  <div class="wrap">
+    <div class="melli">
+      <div>
+        <div class="melli-fig"><img class="melli-photo" src="images/melli.jpg" alt="Melli Ketter"><span class="neu">NEU in&nbsp;EVOLUTION</span></div>
+        <div class="melli-who"><strong>Melli&nbsp;Ketter</strong><em class="melli-role">Ayurveda-Coach &amp;&nbsp;Nervensystembegleiterin</em><span>Dein Körper ist&nbsp;Natur.</span></div>
+      </div>
+      <div class="melli-copy">
+        <h2 style="margin-bottom:10px">Astrologie x&nbsp;Nervensystem</h2>
+        <h3 style="margin-bottom:18px;color:var(--turq-deep);font-size:var(--fs-h3)">Astrologie, die im Körper&nbsp;landet.</h3>
+        <p class="lead">Zu jedem Planeten gibt es eine Nervensystem-Session mit Melli. Als&nbsp;Integration dessen, was du im Monat erlebt&nbsp;hast.</p>
+        <p>Verstehen passiert im Kopf, Veränderung im Nervensystem. Es&nbsp;entscheidet, wie du auf Druck, Nähe, Konflikte und Stille reagierst. Genau&nbsp;das sind die Themen der Planeten. In&nbsp;der Session erlebst du den Planeten des Monats im Körper, statt nur über ihn nachzudenken. So&nbsp;wird aus Astrologie etwas, das dich wirklich&nbsp;verändert.</p>
+        <p style="font-weight:700">Kopf und Herz verbinden. Veränderung&nbsp;spüren.</p>
+      </div>
+    </div>
+
+    <div class="body-map">
+      <img class="body-img" src="images/planeten-koerper.svg" alt="Fein gezeichnete Frau mit langen Haaren, die nach dem Mond greift, mit den Planeten: Merkur an Kopf, Kehle und Hand, Venus am Gesicht, Sonne am Herz, Mars am Solarplexus, an der Wurzel und an der Hand, Mond im Bauch">
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">Planeten im&nbsp;Körper</p>
+        <h2>Jeder Planet hat seinen Platz &amp; Ausdruck im&nbsp;Körper.</h2>
+        <p class="lead">Genau dort setzt die Session an. Du&nbsp;spürst, was du im Call verstanden&nbsp;hast.</p>
+        <ul class="legend">
+        <li><svg class="legend-ico" viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="#bc7404"/><g><circle cx="-2.5" cy="2.5" r="6.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.2 -2.2 L9.5 -9.5 M4 -9.5 H9.5 V-4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g></svg><div><strong>Mars</strong> <div class="what">Dein Antrieb. Hier&nbsp;sitzt die Kraft, die ins Tun kommt und Grenzen&nbsp;setzt.</div></div></li>
+        <li><svg class="legend-ico" viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="#8796ff"/><g><circle cx="0" cy="-3.5" r="6.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 3 V12.5 M-4.5 8.5 H4.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g></svg><div><strong>Venus</strong> <div class="what">Dein Genießen. Hier&nbsp;spürst du Freude, Wertschätzung, Liebe und deine&nbsp;Weiblichkeit.</div></div></li>
+        <li><svg class="legend-ico" viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="#0b134b"/><g><path d="M-5.5 -13 Q0 -7 5.5 -13" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="-3" r="5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 2.5 V12 M-4.5 8 H4.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g></svg><div><strong>Merkur</strong> <div class="what">Dein Ausdruck. Hier&nbsp;entstehen Gedanken und Worte und alles, was du&nbsp;anfasst.</div></div></li>
+        <li><svg class="legend-ico" viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="#4a50b8"/><g><path transform="translate(1 0)" d="M6.667 -9.98 A12 12 0 1 0 6.667 9.98 A10 10 0 1 1 6.667 -9.98 Z" fill="#fff" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></g></svg><div><strong>Mond</strong> <div class="what">Dein Gefühl. Hier&nbsp;wohnen Bedürfnisse, Geborgenheit und dein&nbsp;Bauchgefühl.</div></div></li>
+        <li><svg class="legend-ico" viewBox="-24 -24 48 48" aria-hidden="true"><circle r="22" fill="#e0a83a"/><g><circle r="11.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle r="2.8" fill="#fff"/></g></svg><div><strong>Sonne</strong> <div class="what">Dein Wesenskern. Hier&nbsp;strahlst du in die Welt, bist ganz bei dir und in deinem ureigenen&nbsp;Sein.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="slogan-script" style="text-align:center;margin:clamp(32px,5vw,56px) auto 0;max-width:none">„Der Himmel ist in dir.“ (Angelus&nbsp;Silesius)</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="bg-white faq" id="faq">
+  <div class="wrap narrow">
+    <h2 style="margin-bottom:24px">Häufige&nbsp;Fragen</h2>
+    <details open>
+      <summary>Was, wenn ich nicht live im Zoom dabei sein&nbsp;kann?</summary>
+      <p>Die Aufzeichnung aller Calls steht dir zur&nbsp;Verfügung.</p>
+    </details>
+    <details>
+      <summary>Ich kenne mein Chart schon ziemlich gut. Was&nbsp;bringt mir das&nbsp;zusätzlich?</summary>
+      <p>Genau dann ist es relevant. EVOLUTION&nbsp;setzt nicht beim Wissen an, sondern bei der Umsetzung. Du&nbsp;arbeitest nicht daran, noch mehr zu verstehen, sondern daran, das, was du längst weißt, wirklich zu leben. Geerdete&nbsp;Astrologie&nbsp;:)</p>
+    </details>
+    <details>
+      <summary>Brauche ich&nbsp;Vorwissen?</summary>
+      <p>Grundkenntnisse sind sinnvoll: Planeten und Tierkreiszeichen solltest du kennen. Eine&nbsp;komplette Ausbildung brauchst du nicht. Vor&nbsp;allem brauchst du Neugier, für Astrologie und für dich&nbsp;selbst.</p>
+    </details>
+    <details>
+      <summary>Ist das ein klassischer&nbsp;Astro-Kurs?</summary>
+      <p>Nein. Astrologie&nbsp;ist die Grundlage, aber es geht nicht darum, noch mehr Inhalte zu lernen. Im&nbsp;Fokus steht, wie sich deine Konstellationen konkret in deinem Alltag zeigen und wie du beginnst, sie bewusst zu&nbsp;leben.</p>
+    </details>
+    <details>
+      <summary>Wie lange habe ich&nbsp;Zugriff?</summary>
+      <p>Unbegrenzt. Du&nbsp;kannst alle Aufzeichnungen jederzeit wieder anschauen und bekommst praktische Übersichten dazu, zum Ausdrucken, Aufhängen oder für die digitale&nbsp;Nutzung.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="bg-cosmic final accent-bg" style="text-align:center;--accent-img:url('images/final-glitter.jpg');--accent-op:.22;--accent-blend:screen">
+  <div class="wrap">
+    <h2>Was verändert sich, wenn du all das nicht nur verstehst, sondern wirklich&nbsp;lebst?</h2>
+    <a href="https://tfft.io/vfiYXjX" class="btn" target="_blank" rel="noopener">EVOLUTION, ich bin dabei</a>
+    <span class="btn-note" style="opacity:.85">Start im Februar 2027. Nur&nbsp;8&nbsp;Plätze.</span>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">ASTRO MIT&nbsp;HERZ</div>
+  <small>by Pia Tietz · Dich entdecken. Das&nbsp;Universum entdecken.</small>
+  <div class="footer-legal">
+    <a href="https://www.astro-mit-herz.de/impressum">Impressum</a>
+    <a href="https://www.astro-mit-herz.de/datenschutzerklarung-3">Datenschutz</a>
+    <a href="https://www.astro-mit-herz.de/teilnahmebedingungen">Teilnahmebedingungen</a>
+  </div>
+</footer>
+
+</body>
+</html>
